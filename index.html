@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>789BET - Trang Chủ Chính Thức</title>
+    <!-- Thư viện Icon FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- File CSS của bạn -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Mới Cập Nhật -->
+    <header class="header">
+        <!-- 1. Header Mobile -->
+        <div class="header-mobile">
+            <!-- Icon Menu (Bên trái) -->
+            <div class="mobile-menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Logo (Ở giữa) -->
+            <div class="mobile-logo-center">
+                <img src="images/logo.png" alt="789BET" class="img-logo-mobile"> 
+            </div>
+
+            <!-- Lá cờ (Bên phải) -->
+            <div class="mobile-right-icon">
+                <img src="images/vn.png" alt="VN" class="img-flag-mobile">
+            </div>
+        </div>
+
+        <!-- 2. Header Desktop -->
+        <div class="header-desktop">
+            <div class="desktop-top-row">
+                
+                <!-- CỤM TRÁI: Đại sứ, Chữ ký, Logo -->
+                <div class="header-left">
+                    <div class="ambassador-box">
+                        <img src="images/daisuheader.png" alt="Đại sứ" class="img-ambassador">
+                    </div>
+                    <div class="brand-box">
+                        
+                        <div class="logo-slogan">
+                            <img src="images/logopc.png" alt="789BET" class="img-logo">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CỤM PHẢI: Đăng nhập/Đăng ký, Link phụ, Ngày giờ -->
+                <div class="header-right">
+                    <div class="auth-and-links">
+                        <div class="auth-row">
+                            <button class="btn btn-login-outline">ĐĂNG NHẬP</button>
+                            <button class="btn btn-register-solid">ĐĂNG KÝ</button>
+                            <img src="images/vn.png" alt="VN" class="img-flag">
+                        </div>
+                        <div class="links-row">
+                            <a href="#">Nạp Tiền</a> <span class="divider">|</span> 
+                            <a href="#">Rút Tiền</a> <span class="divider">|</span> 
+                            <a href="#">Chơi Thử Miễn Phí</a> <span class="divider">|</span> 
+                            <a href="#">Chế Độ VIP</a>
+                            <span class="datetime" id="vn-clock">Đang tải giờ...</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Thanh Menu Ngang Desktop -->
+            <nav class="desktop-menu-bar">
+                <ul>
+                    <li class="has-badge">
+                        <span class="badge-hot">HOT</span>
+                        <a href="#"><span>🃏</span> CASINO</a>
+                    </li>
+                    <li class="has-badge">
+                        <span class="badge-hot">HOT</span>
+                        <a href="#"><span>🎰</span> NỔ HŨ</a>
+                    </li>
+                    <li><a href="#"><span>🐟</span> BẮN CÁ</a></li>
+                    <li><a href="#"><span>⚽</span> THỂ THAO</a></li>
+                    <li><a href="#"><span>🎲</span> GAME BÀI</a></li>
+                  <li><a href="#"><span>🐓</span> ĐÁ GÀ</a></li>
+                    <li><a href="#"><span>🎫</span> XỔ SỐ</a></li>
+                    <li><a href="#"><span>🎁</span> KHUYẾN MÃI</a></li>
+                    <li><a href="#"><span>👑</span> THƯƠNG HIỆU</a></li>
+                    <li class="has-badge">
+                        <span class="badge-hot">MỚI</span>
+                        <a href="#"><span>🤝</span> ĐẠI LÝ</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Quảng cáo Dạng Trượt (Slider) -->
+    <section class="hero-slider-container">
+        <!-- Khung chứa các ảnh -->
+        <div class="slider-track" id="banner-track">
+            <img src="images/banner1.jpg" alt="Banner 1" class="slide-img">
+            <img src="images/banner2.jpg" alt="Banner 2" class="slide-img">
+            <img src="images/banner3.jpg" alt="Banner 3" class="slide-img">
+            <img src="images/banner4.jpg" alt="Banner 4" class="slide-img">
+            <img src="images/banner5.jpg" alt="Banner 5" class="slide-img">
+            <img src="images/banner6.jpg" alt="Banner 6" class="slide-img">
+        </div>
+        
+        <!-- Các dấu chấm điều hướng ở dưới -->
+        <div class="slider-dots" id="slider-dots">
+            <!-- JS sẽ tự động tạo các chấm này dựa trên số lượng ảnh -->
+        </div>
+        
+        <!-- Nút bấm Qua Lại (Thường dùng cho PC) -->
+        <button class="slider-btn prev-btn" id="btn-prev"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="slider-btn next-btn" id="btn-next"><i class="fa-solid fa-chevron-right"></i></button>
+    </section>
+
+    <!-- Thông báo / Marquee -->
+    <div class="announcement">
+        <marquee>Chào mừng bạn đến với hệ thống giải trí hàng đầu. Nhận ngay ưu đãi khủng khi đăng ký mới!</marquee>
+    </div>
+    
+    <!-- PHẦN ĐẠI SỨ THƯƠNG HIỆU (Chỉ hiển thị trên PC) -->
+    <section class="ambassador-section desktop-only">
+        <div class="ambassador-container">
+            <!-- Tiêu đề -->
+            <div class="ambassador-title">
+                <i class="fa-solid fa-location-dot"></i> ĐẠI SỨ THƯƠNG HIỆU ĐỘC QUYỀN
+            </div>
+            
+            <!-- Khu vực chứa Ảnh và Video -->
+            <div class="ambassador-content">
+                
+                <!-- Cột trái: Ảnh 2 đại sứ (daisu.png) -->
+                <div class="ambassador-image-col">
+                    <img src="images/daisu.png" alt="Hai Đại Sứ 789BET" class="img-two-ambassadors">
+                </div>
+                
+                <!-- Cột phải: Video -->
+                <div class="ambassador-video-col">
+                    <div class="video-wrapper">
+                        <!-- Đổi thẻ <img> thành thẻ <video> có thuộc tính controls -->
+                        <video class="video-cover" controls>
+                            <source src="images/video.mp4" type="video/mp4">
+                            Trình duyệt của bạn không hỗ trợ thẻ video.
+                        </video>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Khối 4 Tính Năng bên dưới -->
+            <div class="features-grid">
+                
+                <div class="feature-box">
+                    <div class="feature-text">
+                        <h4>THƯƠNG HIỆU UY TÍN</h4>
+                        <p>Thương hiệu uy tín hàng đầu trên thị trường nạp rút tiền tỉ không cần lo lắng.</p>
+                    </div>
+                    <!-- Icon dời sang bên phải -->
+                    <div class="feature-icon"><i class="fa-solid fa-circle-check"></i></div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-text">
+                        <h4>SẢN PHẨM ĐA DẠNG</h4>
+                        <p>Trò chơi Casino, Thể Thao, Bắn Cá, Xổ Số. Nhiều sản phẩm đa dạng bạn lựa chọn.</p>
+                    </div>
+                    <div class="feature-icon"><i class="fa-solid fa-vr-cardboard"></i></div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-text">
+                        <h4>GIAO DỊCH NHANH CHÓNG</h4>
+                        <p>Gửi tiền xử lý ngay từ khi nhận được. Rút tiền đơn giản nhanh chóng.</p>
+                    </div>
+                    <div class="feature-icon"><i class="fa-solid fa-money-check-dollar"></i></div>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-text">
+                        <h4>AN NINH BẢO MẬT</h4>
+                        <p>Phương thức thanh toán đa dạng, đảm bảo an ninh và bảo mật thông tin.</p>
+                    </div>
+                    <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+     
+    <!-- Lưới Sản Phẩm -->
+            <div class="products-grid">
+                <!-- Hàng 1 -->
+                <div class="product-card bg-img casino-card"></div>
+                <div class="product-card bg-img thethao-card"></div>
+                <div class="product-card bg-img nohu-card"></div>
+                <div class="product-card bg-img banca-card"></div>
+
+                <!-- Hàng 2 -->
+                <div class="product-card bg-img gamebai-card"></div>
+                <div class="product-card bg-img xoso-card"></div>
+                <div class="product-card bg-img daga-card"></div>
+                <div class="product-card bg-img daily-card"></div>
+                <div class="product-card bg-img khuyenmai-card"></div>
+            </div>
+
+            <!-- PHẦN T TẢI ỨNG DỤNG (Dùng 1 ảnh nguyên bản - Chỉ hiển thị PC) -->
+    <section class="app-download-section desktop-only">
+        <div class="app-container">
+            <!-- Thẻ <a> để khi click vào ảnh sẽ chuyển trang -->
+            <a href="#">
+                <img src="images/taiapppc.png" alt="Tải ứng dụng 789BET" class="img-app-banner">
+            </a>
+        </div>
+    </section>
+     <!-- PHẦN NÚT ĐĂNG KÝ / ĐĂNG NHẬP (Chỉ hiển thị trên Mobile) -->
+    <div class="mobile-auth-bar mobile-only">
+        <button class="mobile-btn register-btn">ĐĂNG KÝ</button>
+        <button class="mobile-btn login-btn">ĐĂNG NHẬP</button>
+    </div>
+
+    <!-- Danh mục Game (Mobile Only) -->
+    <nav class="game-category-nav-mobile mobile-only">
+        <div class="nav-container">
+            <!-- Mũi tên prev -->
+            <button class="nav-arrow prev" aria-label="Previous category"><i class="fa-solid fa-angle-left"></i></button>
+            
+            <div class="nav-scroll">
+                <ul class="nav-list">
+                    <!-- CASINO -->
+                    <li class="nav-item">
+                        <div class="icon-wrapper">
+                            <!-- Thay bằng icon Xúc xắc (đại diện cho Casino miễn phí tốt nhất) -->
+                            <i class="fa-solid fa-dice icon-fa"></i>
+                            <!-- <span class="badge-hot">HOT</span> --> 
+                        </div>
+                        <span class="nav-text">CASINO</span>
+                    </li>
+
+                    <!-- NỔ HŨ -->
+                    <li class="nav-item">
+                        <div class="icon-wrapper">
+                            <!-- Thay bằng icon Những đồng xu (đại diện cho Jackpot / Nổ hũ) -->
+                            <i class="fa-solid fa-coins icon-fa"></i>
+                            <!-- <span class="badge-hot">HOT</span> -->
+                        </div>
+                        <span class="nav-text">NỔ HŨ</span>
+                    </li>
+
+                    <!-- BẮN CÁ -->
+                    <li class="nav-item">
+                        <div class="icon-wrapper">
+                            <!-- Thay bằng icon con cá -->
+                            <i class="fa-solid fa-fish-fins icon-fa"></i>
+                        </div>
+                        <span class="nav-text">BẮN CÁ</span>
+                    </li>
+
+                    <!-- THỂ THAO -->
+                    <li class="nav-item">
+                        <div class="icon-wrapper">
+                            <!-- Thay bằng icon quả bóng -->
+                            <i class="fa-solid fa-futbol icon-fa"></i>
+                        </div>
+                        <span class="nav-text">THỂ THAO</span>
+                    </li>
+
+                    <!-- GAME BÀI -->
+                    <li class="nav-item">
+                        <div class="icon-wrapper">
+                            <!-- Thay bằng icon màn hình có hình lá bài -->
+                            <i class="fa-solid fa-desktop icon-fa"></i>
+                        </div>
+                        <span class="nav-text">GAME BÀI</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Mũi tên next -->
+            <button class="nav-arrow next" aria-label="Next category"><i class="fa-solid fa-angle-right"></i></button>
+        </div>
+    </nav>
+
+    <!-- Lưới nội dung game (Mobile Only) -->
+    <main class="game-grid mobile-only">
+        
+        <!-- Thẻ Game 1 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/1.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+        
+        <!-- Thẻ Game 2 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Thay bằng ảnh tương ứng -->
+            <img src="images/2.png" alt="Sảnh DreamGaming" class="mobile-game-img">
+        </a>
+
+        <!-- Thẻ Game 3 -->
+        <a href="#" class="mobile-game-card">
+            <img src="images/3.png" alt="Quyết Chiến Tiền Thưởng 168G" class="mobile-game-img">
+        </a>
+
+        <!-- Thẻ Game 4 -->
+        <a href="#" class="mobile-game-card">
+            <img src="images/4.png" alt="Kho Báu Aztec 168G" class="mobile-game-img">
+        </a>
+        
+        <!-- Thẻ Game 5 -->
+        <a href="#" class="mobile-game-card">
+            <img src="images/5.png" alt="Quyết Chiến Tiền Thưởng PG" class="mobile-game-img">
+        </a>
+
+        <!-- Thẻ Game 6 -->
+        <a href="#" class="mobile-game-card">
+            <img src="images/6.png" alt="Kho Báu Aztec PG" class="mobile-game-img">
+        </a>
+
+        <!-- Thẻ Game 7 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/7.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+        <!-- Thẻ Game 7 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/8.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+        <!-- Thẻ Game 7 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/9.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+        <!-- Thẻ Game 7 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/10.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+        <!-- Thẻ Game 7 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/11.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+        <!-- Thẻ Game 7 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/12.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+        <!-- Thẻ Game 7 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/13.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+        <!-- Thẻ Game 7 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/14.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+        <!-- Thẻ Game 7 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/15.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+        <!-- Thẻ Game 7 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/16.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+        <!-- Thẻ Game 7 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/17.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+        <!-- Thẻ Game 7 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/18.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+        <!-- Thẻ Game 7 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/19.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+        <!-- Thẻ Game 7 -->
+        <a href="#" class="mobile-game-card">
+            <!-- Nhớ thay src bằng tên file ảnh thật của bạn, ví dụ: images/game1.png -->
+            <img src="images/20.png" alt="Sảnh Sexy Casino" class="mobile-game-img">
+        </a>
+    </main>
+     <!-- PHẦN TẢI APP MOBILE (Chỉ hiển thị trên điện thoại) -->
+    <section class="mobile-app-download mobile-only">
+        
+        <!-- Tiêu đề TẢI APP -->
+        <div class="mobile-app-header">
+            <i class="fa-solid fa-download"></i> TẢI APP
+        </div>
+
+        <!-- Hai nút tải App (Android / iOS) -->
+        <div class="mobile-app-buttons">
+            <!-- Nút Android -->
+            <div class="app-btn-box">
+                
+                <div class="app-btn-text">
+                    
+                    <!-- Thay bằng ảnh nút Google Play của bạn -->
+                    <img src="images/android.png" alt="Get it on Google Play" class="img-store">
+                </div>
+            </div>
+
+            <!-- Nút iOS -->
+            <div class="app-btn-box">
+                
+                <div class="app-btn-text">
+                    
+                    <!-- Thay bằng ảnh nút App Store của bạn -->
+                    <img src="images/ios.png" alt="Download on the App Store" class="img-store">
+                </div>
+            </div>
+        </div>
+
+        <!-- Hình ảnh Đại sứ -->
+        <div class="mobile-app-ambassadors">
+            <!-- Thay bằng ảnh đại sứ của bạn -->
+            <img src="images/endorse.png" alt="Đại sứ 789BET" class="img-ambassadors-mobile">
+        </div>
+
+    </section>
+    <!-- Bottom Navigation cho Mobile (Chỉ hiển thị trên điện thoại) -->
+    <nav class="bottom-nav mobile-only">
+        <!-- Mục đang kích hoạt (Trang chủ) -->
+        <div class="nav-item active">
+            <i class="fa-solid fa-house icon-bottom"></i>
+            <p>Trang chủ</p>
+        </div>
+        
+        <div class="nav-item">
+            <i class="fa-regular fa-handshake icon-bottom"></i>
+            <p>Đại lý 60%</p>
+        </div>
+        
+        <div class="nav-item">
+            <i class="fa-solid fa-gift icon-bottom"></i>
+            <p>Ưu đãi</p>
+        </div>
+        
+        <div class="nav-item">
+            <i class="fa-solid fa-gamepad icon-bottom"></i>
+            <p>Chơi thử</p>
+        </div>
+        
+        <div class="nav-item">
+            <!-- Dùng icon tai nghe hoặc đồng hồ 24h -->
+            <i class="fa-solid fa-headset icon-bottom"></i>
+            <p>CSKH</p>
+        </div>
+    </nav>
+   <!-- =========================================
+         MODAL ĐĂNG KÝ / ĐĂNG NHẬP 
+         ========================================= -->
+    <div id="auth-modal" class="modal-overlay">
+        <!-- Sử dụng hình nền image_f15ec0.jpg cho Form -->
+        <div class="modal-content" style="background-image: url('images/backgroud.jfif');">
+            
+            <!-- Nút Đóng Form -->
+            <span class="close-btn" id="close-modal"><i class="fa-solid fa-xmark"></i></span>
+
+            <!-- Header Modal -->
+            <div class="modal-header">
+                <img src="images/logopc.png" alt="789BET" class="modal-logo">
+                
+            </div>
+
+            <!-- ================= 1. FORM ĐĂNG KÝ ================= -->
+            <div id="register-form" class="auth-form" style="display: none;">
+                <div class="input-group">
+                    <input type="text" placeholder="Tên đăng nhập">
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Mật khẩu">
+                    <i class="fa-solid fa-eye icon-right"></i>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Họ và tên">
+                </div>
+                <div class="input-group phone-group">
+                    <div class="phone-prefix">
+                        <!-- Chú ý: Dùng ảnh cờ VN của bạn -->
+                        <img src="images/vn.png" alt="VN"> <span>+84 |</span>
+                    </div>
+                    <input type="text" placeholder="Số điện thoại" style="padding-left: 75px;">
+                </div>               
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agree-terms" checked>
+                    <label for="agree-terms">Tôi đã hiểu <span class="text-orange">"Thỏa thuận đăng ký người dùng"</span></label>
+                </div>
+
+                <!-- Nút chuyển đổi Đăng Nhập / Đăng Ký -->
+                <div class="auth-toggle-box">
+                    <button class="toggle-btn inactive" onclick="switchAuthForm('login')">ĐĂNG NHẬP</button>
+                    <button class="toggle-btn active">ĐĂNG KÝ NGAY</button>
+                </div>
+
+                <!-- Ảnh đại sứ cuối form -->
+                <img src="images/daisuform.png" alt="Đại sứ" class="modal-ambassador-img">
+            </div>
+
+            <!-- ================= 2. FORM ĐĂNG NHẬP ================= -->
+            <div id="login-form" class="auth-form" style="display: none;">
+                <div class="input-group">
+                    <i class="fa-regular fa-user icon-left text-orange"></i>
+                    <input type="text" placeholder="Vui lòng nhập tên tài khoản" style="padding-left: 35px;">
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock icon-left text-orange"></i>
+                    <input type="password" placeholder="Vui lòng nhập mật khẩu" style="padding-left: 35px;">
+                    <i class="fa-solid fa-eye-slash icon-right"></i>
+                </div>                
+                <div class="input-group phone-group">
+                    <div class="phone-prefix">
+                        <!-- Chú ý: Dùng ảnh cờ VN của bạn -->
+                        <img src="images/vn.png" alt="VN"> <span>+84 |</span>
+                    </div>
+                    <input type="text" placeholder="Số điện thoại" style="padding-left: 75px;">
+                </div>
+                <div class="checkbox-group justify-center">
+                    <input type="checkbox" id="remember-me" checked>
+                    <label for="remember-me">Nhớ mật khẩu tài khoản của bạn</label>
+                </div>
+                <!-- Nút chuyển đổi Đăng Ký / Đăng Nhập -->
+                <div class="auth-toggle-box">
+                    <button class="toggle-btn inactive" onclick="switchAuthForm('register')">ĐĂNG KÝ</button>
+                    <button class="toggle-btn active">ĐĂNG NHẬP</button>
+                </div>
+
+                <div class="text-center mt-10">
+                    <a href="#" class="text-orange check-link">KIỂM TRA LINK TRƯỚC KHI ĐĂNG NHẬP <i class="fa-solid fa-link"></i></a>
+                </div>
+
+                <!-- Các link phụ trợ (Lấy lại mật khẩu & Tải app) -->
+                <div class="login-extras">
+                    <div class="extra-col">
+                        <p class="extra-title">LẤY LẠI MẬT KHẨU</p>
+                        <div class="extra-icons">
+                            <div class="extra-item"><i class="fa-regular fa-envelope text-orange icon-lg"></i><span>EMAIL</span></div>
+                            <div class="extra-item"><i class="fa-solid fa-phone-volume text-orange icon-lg"></i><span>SMS</span></div>
+                        </div>
+                    </div>
+                    <div class="extra-col">
+                        <p class="extra-title"><i class="fa-solid fa-download"></i> TẢI APP</p>
+                        <div class="extra-icons">
+                            <div class="extra-item"><i class="fa-brands fa-google-play text-orange icon-lg"></i><span>Google Play</span></div>
+                            <div class="extra-item"><i class="fa-brands fa-apple text-orange icon-lg"></i><span>App Store</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ảnh đại sứ cuối form -->
+                <img src="images/daisuform.png" alt="Đại sứ" class="modal-ambassador-img mt-15">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
