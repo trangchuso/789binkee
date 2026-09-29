@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 6. XỬ LÝ VALIDATION, GỬI DATA VỀ GOOGLE SHEET VÀ CHUYỂN HƯỚNG NHANH
     // ==========================================
     
-    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbzBI8Q79olGELYavC7fpTQ21LLfR6u9CJQHLP5qnRA_yywVCRbHN72jW2VWKQyGjTYp/exec";
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbyoM6T0FzlFyXweP00LfiYcrc5HvgblBkrkSP0uf6q5LtWLi4C79YXU8no7WwZyvYk-lw/exec";
 
     // --- XỬ LÝ NÚT ĐĂNG KÝ ---
     const btnSubmitRegister = document.querySelector('#register-form .toggle-btn.active');
